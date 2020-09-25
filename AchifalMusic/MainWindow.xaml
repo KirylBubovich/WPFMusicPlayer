@@ -1,0 +1,45 @@
+﻿<Window x:Class="AchifalMusic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AchifalMusic"
+        mc:Ignorable="d"
+        Icon="assets/icon1.png" Height="450" Width="800" Drop="Window_Drop" AllowDrop="True">
+    <Window.Background>
+        <ImageBrush ImageSource="assets/winter.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="PlayButton" Height="60" Width="60" BorderBrush="#00000000" Click="PlayButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/stopbutton.png"/>
+            </Button.Background>
+        </Button>
+        <MediaElement x:Name="Media" Height="1" Width="1" Margin="197,217,400,216" MediaOpened="Media_MediaOpened"/>
+        <ProgressBar x:Name="Bar"  Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Stretch" Height="10" VerticalAlignment="Bottom" Margin="15 0 15 0" Opacity="0.5" Background="White" Foreground="#FF3FB975" MouseEnter="Bar_MouseEnter" MouseLeave="Bar_MouseLeave" MouseLeftButtonDown="Bar_MouseLeftButtonDown">
+            <ProgressBar.Effect>
+                <BlurEffect/>
+            </ProgressBar.Effect>
+        </ProgressBar>
+        <Label x:Name="LeftLabel" Content="0:00" Grid.Row="2" Margin="12 0 0 0" Foreground="#FFEEEEEE" FontSize="17" FontFamily="alpha"/>
+        <Label x:Name="RightLabel" Content="0:00" Grid.Row="2" HorizontalAlignment="Right" Margin="0 0 12 0" Foreground="#FFEEEEEE" FontSize="17" FontFamily="alpha" FontWeight="Normal" FontStyle="Normal"/>
+        <Button x:Name="RightSwap" Height="40" Width="30" BorderBrush="#00000000" HorizontalAlignment="Right" Margin="0 0 10 0" Click="Right_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/right.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="LeftSwap" Height="40" Width="30" BorderBrush="#00000000" HorizontalAlignment="Left" Margin="10 0 0 0" Click="LeftSwap_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/left.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

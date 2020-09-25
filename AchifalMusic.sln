@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AchifalMusic", "AchifalMusic\AchifalMusic.csproj", "{EDD50456-AD6C-445F-95D9-92360BD04DE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDD50456-AD6C-445F-95D9-92360BD04DE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD50456-AD6C-445F-95D9-92360BD04DE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD50456-AD6C-445F-95D9-92360BD04DE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD50456-AD6C-445F-95D9-92360BD04DE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D98D29D2-9CF0-42E3-BA98-127995D46DF6}
+	EndGlobalSection
+EndGlobal
