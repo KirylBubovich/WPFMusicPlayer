@@ -21,7 +21,6 @@ namespace AchifalMusic
         public bool IsPlaying;
         public bool IsFinish;
         public bool HaveContact;
-        public double BarMaxRelative = 755.4;
         public List<string> songs;
         public List<string> formats = new List<string>() { "mp3" };
         public int cur;
@@ -135,6 +134,7 @@ namespace AchifalMusic
 
         private void Bar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            double BarMaxRelative = Bar.ActualWidth;
             double newValue = e.GetPosition(Bar).X / BarMaxRelative;
             Bar.Value = newValue * 100;
             Media.Position = Media.NaturalDuration.TimeSpan * newValue;
