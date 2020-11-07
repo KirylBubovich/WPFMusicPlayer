@@ -11,19 +11,28 @@
     <None Remove="assets\icon.png" />
     <None Remove="assets\icon1.png" />
     <None Remove="assets\left.png" />
+    <None Remove="assets\leftover.png" />
     <None Remove="assets\playbutton.png" />
+    <None Remove="assets\playbuttonover.png" />
     <None Remove="assets\right.png" />
+    <None Remove="assets\rightover.png" />
+    <None Remove="assets\rightTriangle.png" />
     <None Remove="assets\stopbutton.png" />
+    <None Remove="assets\stopbuttonover.png" />
     <None Remove="assets\winter.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="assets\icon.png" />
-    <Resource Include="assets\icon1.png" />
     <Resource Include="assets\left.png" />
+    <Resource Include="assets\leftover.png" />
     <Resource Include="assets\playbutton.png" />
+    <Resource Include="assets\playbuttonover.png" />
     <Resource Include="assets\right.png" />
+    <Resource Include="assets\rightover.png" />
+    <Resource Include="assets\rightTriangle.png" />
     <Resource Include="assets\stopbutton.png" />
+    <Resource Include="assets\stopbuttonover.png" />
     <Resource Include="assets\winter.jpg" />
   </ItemGroup>
 
