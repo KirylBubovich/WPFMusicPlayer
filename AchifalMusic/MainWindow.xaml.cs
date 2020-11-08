@@ -93,7 +93,6 @@ namespace AchifalMusic
                     StartMusic(songs[cur]);
                 }
             }
-
         }
 
         private void Media_MediaOpened(object sender, RoutedEventArgs e)
@@ -106,6 +105,8 @@ namespace AchifalMusic
 
         private void StartMusic(string path)
         {
+            if(IsPlaying)
+            Media.Stop();
             Media.Source = new Uri(path);
             Media.LoadedBehavior = MediaState.Manual;
             Media.UnloadedBehavior = MediaState.Manual;
@@ -146,6 +147,8 @@ namespace AchifalMusic
             HaveContact = false;
             cur = (cur - 1) % songs.Count;
             StartMusic(songs[cur]);
+            PlayButtonBackground();
+            HaveContact = true;
         }
 
         private void Right_Click(object sender, RoutedEventArgs e)
@@ -153,6 +156,8 @@ namespace AchifalMusic
             HaveContact = false;
             cur = (cur + 1) % songs.Count;
             StartMusic(songs[cur]);
+            PlayButtonBackground();
+            HaveContact = true;
         }
 
         private void PlayButton_MouseEnter(object sender, MouseEventArgs e)
@@ -188,6 +193,15 @@ namespace AchifalMusic
         private void RightSwap_MouseEnter(object sender, MouseEventArgs e)
         {
             Media.Pause();
+        }
+
+        private void PlayButtonBackground()
+        {
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.StreamSource = Application.GetResourceStream(new Uri("assets/stopbutton.png", UriKind.Relative)).Stream;
+            bi.EndInit();
+            PlayButton.Background = new ImageBrush(bi);
         }
     }
 }
