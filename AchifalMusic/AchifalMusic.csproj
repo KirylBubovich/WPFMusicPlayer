@@ -17,6 +17,11 @@
     <None Remove="assets\right.png" />
     <None Remove="assets\rightover.png" />
     <None Remove="assets\rightTriangle.png" />
+    <None Remove="assets\Sky0.png" />
+    <None Remove="assets\Sky1.png" />
+    <None Remove="assets\Sky2.png" />
+    <None Remove="assets\Sky3.png" />
+    <None Remove="assets\Sky4.png" />
     <None Remove="assets\stopbutton.png" />
     <None Remove="assets\stopbuttonover.png" />
     <None Remove="assets\winter.jpg" />
@@ -31,6 +36,19 @@
     <Resource Include="assets\right.png" />
     <Resource Include="assets\rightover.png" />
     <Resource Include="assets\rightTriangle.png" />
+    <Resource Include="assets\Sky0.png" />
+    <Resource Include="assets\Sky1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Sky2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Sky3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Sky4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="assets\stopbutton.png" />
     <Resource Include="assets\stopbuttonover.png" />
     <Resource Include="assets\winter.jpg" />

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AchifalMusic"
         mc:Ignorable="d"
-        Icon="assets/icon.png" Height="450" Width="800" Drop="Window_Drop" AllowDrop="True">
+        Icon="assets/icon.png" Height="322.5" Width="600" Drop="Window_Drop" AllowDrop="True">
     <Window.Resources>
         <ImageBrush x:Key="playbuttonover" ImageSource="assets/playbutton.png"/>
         <ImageBrush x:Key="stopbuttonover" ImageSource="assets/playbutton.png"/>
@@ -186,40 +186,46 @@
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5.25*"/>
+            <RowDefinition Height="4.75*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Style="{DynamicResource PlayButtomStyle}" x:Name="PlayButton" Height="60" Width="60" BorderBrush="#00000000" Click="PlayButton_Click" MouseEnter="PlayButton_MouseEnter" MouseLeave="PlayButton_MouseLeave">
-            <Button.Background>
-                <ImageBrush ImageSource="assets/stopbutton.png"/>
-            </Button.Background>
-        </Button>
-        <MediaElement x:Name="Media" Height="1" Width="1" Margin="197,217,400,216" MediaOpened="Media_MediaOpened"/>
-        <ProgressBar x:Name="Bar"  Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Stretch" Height="10" VerticalAlignment="Bottom" Margin="15 0 15 0" Opacity="0.5" Background="White" Foreground="#FF3FB975" MouseEnter="Bar_MouseEnter" MouseLeave="Bar_MouseLeave" MouseLeftButtonDown="Bar_MouseLeftButtonDown">
+        <Image x:Name="Sky0" Source ="assets/Sky0.png" VerticalAlignment="Top" Margin="0,-12,0,0" Opacity="1" Grid.Row="0" Stretch="Fill"/>
+        <Image x:Name="Sky1" Source ="assets/Sky1.png" VerticalAlignment="Top" Margin="0,-12,0,0" Opacity="0" Grid.Row="0" Stretch="Fill"/>
+        <Image x:Name="Sky2" Source ="assets/Sky2.png" VerticalAlignment="Top" Margin="0,-12,0,0" Opacity="0" Grid.Row="0" Stretch="Fill"/>
+        <Image x:Name="Sky3" Source ="assets/Sky3.png" VerticalAlignment="Top" Margin="0,-12,0,0" Opacity="0" Grid.Row="0" Stretch="Fill"/>
+        <Image x:Name="Sky4" Source ="assets/Sky4.png" VerticalAlignment="Top" Margin="0,-12,0,0" Opacity="0" Grid.Row="0" Stretch="Fill"/>
+        <MediaElement x:Name="Media" Height="1" Width="1" Margin="185,217,501,127" MediaOpened="Media_MediaOpened" Grid.Column="2"/>
+        <ProgressBar x:Name="Bar" Grid.Row="2" Height="10" VerticalAlignment="Bottom" Margin="15,0,15,0" Opacity="0.5" Background="White" Foreground="#FF3FB975" MouseEnter="Bar_MouseEnter" MouseLeave="Bar_MouseLeave" MouseLeftButtonDown="Bar_MouseLeftButtonDown">
             <ProgressBar.Effect>
                 <BlurEffect/>
             </ProgressBar.Effect>
         </ProgressBar>
-        <Label x:Name="LeftLabel" Content="0:00" Grid.Row="2" Margin="12 0 0 0" Foreground="#FFEEEEEE" FontSize="17" FontFamily="alpha"/>
-        <Label x:Name="RightLabel" Content="0:00" Grid.Row="2" HorizontalAlignment="Right" Margin="0 0 12 0" Foreground="#FFEEEEEE" FontSize="17" FontFamily="alpha" FontWeight="Normal" FontStyle="Normal"/>
-        <Button Style="{DynamicResource RightButtonStyle}" x:Name="RightSwap" Height="50" Width="30" BorderBrush="#00000000" HorizontalAlignment="Right" Margin="0 0 10 0" Click="Right_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="assets/right.png"/>
-            </Button.Background>
-        </Button>
-        <Button Style="{DynamicResource LeftButtonStyle}" x:Name="LeftSwap" Height="50" Width="30" BorderBrush="#00000000" HorizontalAlignment="Left" Margin="10 0 0 0" Click="LeftSwap_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="assets/left.png"/>
-            </Button.Background>
-        </Button>
-        <Image x:Name="RightTriangle" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="0" Height="20" Width="20" Source="assets/rightTriangle.png" Margin="0,0,0,25" MouseEnter="RightTriangle_MouseEnter" Opacity="0.9">
+        <Label x:Name="LeftLabel" Content="0:00" Grid.Row="3" Margin="12,0,0,0" Foreground="#FFEEEEEE" FontSize="17" FontFamily="alpha"/>
+        <Label x:Name="RightLabel" Content="0:00" Grid.Row="3" HorizontalAlignment="Right" Margin="0,0,12,0" Foreground="#FFEEEEEE" FontSize="17" FontFamily="alpha"/>
+        <Image x:Name="RightTriangle" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="1" Height="20" Width="20" Source="assets/rightTriangle.png" Margin="0,0,0,25" MouseEnter="RightTriangle_MouseEnter" Opacity="0.9">
             <Image.Effect>
                 <BlurEffect/>
             </Image.Effect>
         </Image>
+        <Button Style="{DynamicResource RightButtonStyle}" x:Name="RightSwap" Height="50" Width="30" BorderBrush="#00000000" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,-20" Click="Right_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/right.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{DynamicResource LeftButtonStyle}" x:Name="LeftSwap" Height="50" Width="30" BorderBrush="#00000000" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,-20" Click="LeftSwap_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/left.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{DynamicResource PlayButtomStyle}" x:Name="PlayButton" VerticalAlignment="Bottom" Margin="0,0,0,-22" Height="60" Width="60" BorderBrush="#00000000" Click="PlayButton_Click" MouseEnter="PlayButton_MouseEnter" MouseLeave="PlayButton_MouseLeave">
+            <Button.Background>
+                <ImageBrush ImageSource="assets/stopbutton.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

@@ -18,10 +18,19 @@ namespace AchifalMusic
         public List<string> songs;
         public List<string> formats = new List<string>() { "mp3" };
         public int cur;
+        public bool SkyFlag;
+        public Random rand = new Random();
+        public int curSky;
         public MainWindow()
         {
+            SkyFlag = true;
             HaveContact = false;
+            curSky = rand.Next(0, 3);
             InitializeComponent();
+            double screenWidth = SystemParameters.FullPrimaryScreenWidth;
+            double screenHeight = SystemParameters.FullPrimaryScreenHeight;
+            this.Left = screenWidth - this.Width;
+            this.Top = screenHeight - 0.93 * this.Height;
             StartTimer();
             string initialMusic = Environment.GetCommandLineArgs()[1]/*"D:\\Music\\03_ronan_keating_breathe_myzuka.fm.mp3"*/;
             FormMusicList(initialMusic);
@@ -67,7 +76,7 @@ namespace AchifalMusic
 
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
-            if (HaveContact && IsPlaying && !IsFinish)
+            if (HaveContact && IsPlaying && !IsFinish && Media.NaturalDuration.HasTimeSpan)
             {
                 IsFinish = Media.Position >= Media.NaturalDuration.TimeSpan;
                 int minutes, seconds;
@@ -93,6 +102,44 @@ namespace AchifalMusic
                     StartMusic(songs[cur]);
                 }
             }
+            if(SkyFlag)
+            {
+                AddOpacity(1);
+                SkyFlag = SumOpacities() < 1;
+            }
+            else
+            {
+                AddOpacity(-1);
+                SkyFlag = SumOpacities() <= 0;
+                if (SkyFlag)
+                {
+                    curSky = rand.Next(0, 3);
+                }
+            }
+        }
+
+        private void AddOpacity(int sign)
+        {
+            switch (curSky)
+            {
+                case 0:
+                    Sky1.Opacity += sign * 0.01;
+                    break;
+                case 1:
+                    Sky2.Opacity += sign * 0.01;
+                    break;
+                case 2:
+                    Sky3.Opacity += sign * 0.01;
+                    break;
+                default:
+                    Sky4.Opacity += sign * 0.01;
+                    break;
+            }
+        }
+
+        private double SumOpacities()
+        {
+            return Sky1.Opacity + Sky2.Opacity + Sky3.Opacity + Sky4.Opacity;
         }
 
         private void Media_MediaOpened(object sender, RoutedEventArgs e)
